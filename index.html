@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Princess Nyla's World</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #spiral {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Hypnotic_Spiral.svg/512px-Hypnotic_Spiral.svg.png') no-repeat center center;
+            background-size: cover;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 10;
+            animation: fadeOut 2s ease-in-out 2s forwards;
+        }
+
+        #main-content {
+            display: none;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Princess Nyla's World!</h1>
-    <p>Adventure awaits. 🏰✨</p>
+    <div id="spiral"></div>
+
+    <div id="main-content">
+        <h1>Welcome to Princess Nyla's World!</h1>
+        <p>Adventure awaits. 🏰✨</p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById('main-content').style.display = 'block';
+        }, 4000);
+    </script>
 </body>
 </html>
+
