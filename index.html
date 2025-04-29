@@ -9,22 +9,34 @@
             padding: 0;
             overflow: hidden;
             font-family: Arial, sans-serif;
+            background: black;
         }
 
         #spiral {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Hypnotic_Spiral.svg/512px-Hypnotic_Spiral.svg.png') no-repeat center center;
-            background-size: cover;
+            width: 200px;
+            height: 200px;
+            border: 16px solid white;
+            border-top: 16px solid black;
+            border-radius: 50%;
             position: fixed;
-            width: 100vw;
-            height: 100vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin 2s linear infinite, fadeOut 2s ease-in-out 2s forwards;
             z-index: 10;
-            animation: fadeOut 2s ease-in-out 2s forwards;
         }
 
         #main-content {
             display: none;
             text-align: center;
             padding-top: 100px;
+            background: white;
+            height: 100vh;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         @keyframes fadeOut {
@@ -44,10 +56,4 @@
     </div>
 
     <script>
-        setTimeout(() => {
-            document.getElementById('main-content').style.display = 'block';
-        }, 4000);
-    </script>
-</body>
-</html>
-
+        setTimeout
